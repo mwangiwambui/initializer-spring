@@ -13,11 +13,17 @@ import org.springframework.stereotype.Service;
     @Service
 
     public class ReservationService {
-    private RoomRespository roomRepository;
-    private GuestRepository guestRepository;
-    private ReservationRepository reservationRepository;
+    private final RoomRespository roomRepository;
+    private final GuestRepository guestRepository;
+    private final ReservationRepository reservationRepository;
 
-    public List<RoomReservation> getRoomReservationsForDate(Date date) {
+        public ReservationService(RoomRespository roomRepository, GuestRepository guestRepository, ReservationRepository reservationRepository) {
+            this.roomRepository = roomRepository;
+            this.guestRepository = guestRepository;
+            this.reservationRepository = reservationRepository;
+        }
+
+        public List<RoomReservation> getRoomReservationsForDate(Date date) {
         Iterable<Room> rooms = this.roomRepository.findAll();
         Map<Long, RoomReservation> roomReservationMap = new HashMap();
         rooms.forEach(room -> {
