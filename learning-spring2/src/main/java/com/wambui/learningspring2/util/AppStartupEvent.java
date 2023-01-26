@@ -2,7 +2,7 @@ package com.wambui.learningspring2.util;
 
 import com.wambui.learningspring2.business.ReservationService;
 import com.wambui.learningspring2.business.RoomReservation;
-import org.h2.util.DateTimeUtils;
+import com.wambui.learningspring2.util.DateUtils;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
