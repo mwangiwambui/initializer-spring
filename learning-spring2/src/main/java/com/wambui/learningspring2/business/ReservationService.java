@@ -1,11 +1,6 @@
     package com.wambui.learningspring2.business;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 import com.wambui.learningspring2.data.*;
@@ -73,6 +68,26 @@ import org.springframework.stereotype.Service;
             });
             return guestList;
     }
+
+    public List<Room> getRooms(){
+            Iterable<Room> rooms = this.roomRepository.findAll();
+            List<Room> roomList = new ArrayList<>();
+            rooms.forEach(room -> {roomList.add(room);});
+            return  roomList;
+    }
+
+    public void addGuests(Guest guest){
+            Guest newGuest = new Guest();
+            newGuest.setName(guest.getName());
+            newGuest.setAddress(guest.getAddress());
+            newGuest.setCountry(guest.getCountry());
+            newGuest.setEmailAddress(guest.getEmailAddress());
+            newGuest.setState(guest.getState());
+            newGuest.setLastName(guest.getLastName());
+            newGuest.setPhoneNumber(guest.getPhoneNumber());
+            guestRepository.save(newGuest);
+    }
+
 
 
 }
