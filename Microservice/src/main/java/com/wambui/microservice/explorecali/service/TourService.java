@@ -18,10 +18,13 @@ public class TourService {
         this.tourPackageRepository = tourPackageRepository;
     }
 
-    public Tour createTour(String title, String description, String blurb, Integer price, String duration, String bullet,
+    public Tour createTour(String title, String description, String blurb, Integer price, String duration, String bullets,
                            String keywords, String tourPackageName, Difficulty difficulty, Region region ){
-        TourPackage tourPackage = null;
+        TourPackage tourPackage = tourPackageRepository.findById(tourPackageName)
+                .orElseThrow(() -> new RuntimeException("Tour Package does not exist" + tourPackageName));
 
-        return new Tour(title, description, blurb, price, duration, bullet, keywords, tourPackage, difficulty, region);
+        return tourRepository.save(new Tour(title, description, blurb, price, duration, bullets, keywords, tourPackage, difficulty, region));
     }
+
+    public long total() { return tourRepository.count(); }
 }
