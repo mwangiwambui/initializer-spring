@@ -1,8 +1,10 @@
 package com.wambui.microservice.explorecali.domain;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
 
+@Entity
 public class TourPackage {
     @Id
     private String code;

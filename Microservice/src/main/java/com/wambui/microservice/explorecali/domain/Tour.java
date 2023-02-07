@@ -4,6 +4,7 @@ import org.hibernate.annotations.CollectionId;
 
 import javax.persistence.*;
 import javax.persistence.criteria.CriteriaBuilder;
+import java.util.Objects;
 
 @Entity
 public class Tour {
@@ -60,10 +61,6 @@ public class Tour {
 
     public Integer getId() {
         return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public String getTitle() {
@@ -144,6 +141,36 @@ public class Tour {
 
     public void setRegion(Region region) {
         this.region = region;
+    }
+
+    @Override
+    public String toString() {
+        return "Tour{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", blurb='" + blurb + '\'' +
+                ", price=" + price +
+                ", duration='" + duration + '\'' +
+                ", bullets='" + bullets + '\'' +
+                ", keywords='" + keywords + '\'' +
+                ", tourPackage=" + tourPackage +
+                ", difficulty=" + difficulty +
+                ", region=" + region +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Tour tour = (Tour) o;
+        return Objects.equals(getId(), tour.getId()) && Objects.equals(getTitle(), tour.getTitle()) && Objects.equals(getDescription(), tour.getDescription()) && Objects.equals(getBlurb(), tour.getBlurb()) && Objects.equals(getPrice(), tour.getPrice()) && Objects.equals(getDuration(), tour.getDuration()) && Objects.equals(getBullets(), tour.getBullets()) && Objects.equals(getKeywords(), tour.getKeywords()) && Objects.equals(getTourPackage(), tour.getTourPackage()) && getDifficulty() == tour.getDifficulty() && getRegion() == tour.getRegion();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, title, description, blurb, price, duration, bullets, keywords, tourPackage, difficulty, region);
     }
 }
 
