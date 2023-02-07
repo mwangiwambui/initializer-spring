@@ -22,8 +22,8 @@ import static com.fasterxml.jackson.annotation.PropertyAccessor.FIELD;
 @SpringBootApplication
 public class ExplorecaliApplication implements CommandLineRunner {
 
-	@Value("${explorecali.importfile}")
-	private String importFile;
+//	@Value("${explorecali.importfile}")
+//	private String importFile;
 	@Autowired
 	private TourPackageService tourPackageService;
 	@Autowired
@@ -76,7 +76,7 @@ public class ExplorecaliApplication implements CommandLineRunner {
 		//reader
 		static List<TourFromFile> read() throws IOException {
 			return new ObjectMapper().setVisibility(FIELD, ANY).
-					readValue(new FileInputStream("ExplorCalifornia.json"), new TypeReference<List<TourFromFile>>() {});
+					readValue(new FileInputStream("ExploreCalifornia.json"), new TypeReference<List<TourFromFile>>() {});
 		}
 		protected TourFromFile(){}
 

@@ -4,7 +4,9 @@ import com.wambui.microservice.explorecali.domain.TourPackage;
 import com.wambui.microservice.explorecali.repo.TourPackageRepository;
 import com.wambui.microservice.explorecali.repo.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class TourPackageService {
     private TourPackageRepository tourPackageRepository;
 
