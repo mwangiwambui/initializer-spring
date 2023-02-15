@@ -1,17 +1,11 @@
 package com.wambui.microservice.explorecali.repo;
 
-import com.wambui.microservice.explorecali.domain.Difficulty;
-import com.wambui.microservice.explorecali.domain.Region;
 import com.wambui.microservice.explorecali.domain.Tour;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import javax.swing.text.html.Option;
-import java.awt.print.Pageable;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;

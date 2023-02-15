@@ -2,12 +2,9 @@ package com.wambui.microservice.explorecali;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.wambui.microservice.explorecali.domain.Difficulty;
-import com.wambui.microservice.explorecali.domain.Region;
 import com.wambui.microservice.explorecali.service.TourPackageService;
 import com.wambui.microservice.explorecali.service.TourService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

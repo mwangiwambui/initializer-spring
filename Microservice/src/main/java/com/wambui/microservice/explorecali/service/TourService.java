@@ -1,13 +1,10 @@
 package com.wambui.microservice.explorecali.service;
 
-import com.wambui.microservice.explorecali.domain.Difficulty;
-import com.wambui.microservice.explorecali.domain.Region;
 import com.wambui.microservice.explorecali.domain.Tour;
 import com.wambui.microservice.explorecali.domain.TourPackage;
 import com.wambui.microservice.explorecali.repo.TourPackageRepository;
 import com.wambui.microservice.explorecali.repo.TourRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.stereotype.Service;
 
 @Service
